@@ -1,0 +1,19 @@
+print('Enter a word for detection.')
+
+#Input word to detect.
+verb=input()
+
+aa='ing'
+bb='ed'
+
+#Progressive form for words containing ing.
+if aa in verb: verbType='progressive form'
+    
+#Past tense for verbs containing ed or irregular verbs.
+elif bb in verb or verb=='xxx' or verb=='yyy' or verb=='zzz': verbType='past tense'
+
+#Base form for the remaining.
+else: verbType='base form'
+
+#Print out the result.
+print('I think the verb ' +verb+ ' is a '+verbType+ '.')

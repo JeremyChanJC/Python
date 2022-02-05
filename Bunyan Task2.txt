@@ -1,0 +1,80 @@
+import random
+
+words = ["arena", "paris", "acorn", "plate", "solar", "meter", 
+"carry", "sorry", "album", "death", "elope", "fairy", "faint", 
+"house", "ideal", "kiosk", "laugh", "mimic", "nasal", "opium", 
+"quake", "roast", "table", "viola", "worst", "zebra", "young"]
+
+#Randomly choose a target from words
+target = random.choice(words)
+
+#Split the characters of target into 5 different storages
+v = target[0]
+w = target[1]
+x = target[2]
+y = target[3]
+z = target[4]
+
+#Create a function for guessing.
+def currentguess():
+    #Ask the user to input 5 characters separately
+    print('Please enter 5 characters. (Press Enter after entering a character)') 
+    a = input()
+    b = input()
+    c = input()
+    d = input()
+    e = input()
+    
+    #Compare the 1st character entered with the target word    
+    if a==v:
+        print('1st letter ' + a +' is correct.')
+    elif a==w or a==x or a==y or a==z:
+        print('1st letter ' + a +' incorrect position.')
+    else:
+        print('1st letter ' + a +' is not in the ans.')
+    
+    #Compare the 2nd character entered with the target word
+    if b==w:
+        print('2nd letter ' + b +' is correct.')
+    elif b==v or b==x or b==y or b==z:
+        print('2nd letter ' + b +' incorrect position.')
+    else:
+        print('2nd letter ' + b +' is not in the ans.')
+    
+    #Compare the 3rd character entered with the target word
+    if c==x:
+        print('3rd letter ' + c +' is correct.')
+    elif c==v or c==w or c==y or c==z:
+        print('3rd letter ' + c +' incorrect position.')
+    else:
+        print('3rd letter ' + c +' is not in the ans.')
+    
+    #Compare the 4th character entered with the target word
+    if d==y:
+        print('4th letter ' + d +' is correct.')
+    elif d==v or d==w or d==x or d==z:
+        print('4th letter ' + d +' incorrect position.')
+    else:
+        print('4th letter ' + d +' is not in the ans.')
+    
+    #Compare the 5th character entered with the target word
+    if e==z:
+        print('5th letter ' + e +' is correct.')
+    elif e==v or e==w or e==x or e==y:
+        print('5th letter ' + e +' incorrect position.')
+    else:
+        print('5th letter ' + e +' is not in the ans.')
+    
+    #If the word matches, end the programme
+    if a==v and b==w and c==x and d==y and e==z:
+        print('Congratulations! All correct.')
+        exit()
+        
+#Loop for 5 times if the user get the wrong input
+for i in range(6):
+    currentguess()
+    i=i+1
+
+#End if the user inputed 6 times wrongly.        
+print ('You have guessed 6 times wrongly, sorry!')
+print ('Bye.')

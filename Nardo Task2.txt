@@ -1,0 +1,62 @@
+import random
+
+words = ["arena", "paris", "acorn", "plate", "solar", "meter", 
+"carry", "sorry", "album", "death", "elope", "fairy", "faint", 
+"house", "ideal", "kiosk", "laugh", "mimic", "nasal", "opium", 
+"quake", "roast", "table", "viola", "worst", "zebra", "young"]
+
+#Words are randomly selected as targets
+target=random.choice(words)
+
+#Seperate each character.
+char1=target[0]
+char2=target[1]
+char3=target[2]
+char4=target[3]
+char5=target[4]
+
+#Guessing function
+def guessing():
+    #Ask the user to input 5 characters separately
+    print('Enter 5 characters separately.') 
+    guess1=input()
+    guess2=input()
+    guess3=input()
+    guess4=input()
+    guess5=input()
+    
+    #Check that the first character entered matches target
+    if char1==guess1:print('1st letter ' +guess1+' is correct.')
+    elif guess1==char2 or guess1==char3 or guess1==char4 or guess1==char5:print('1st letter ' +guess1+' is in the target but a different position.')
+    else:print('1st letter ' +guess1+' is not in the ans.')
+    
+    #Check that the second character entered matches target    
+    if char2==guess2:print('2nd letter ' +guess2+' is correct.')
+    elif guess2==char1 or guess2==char3 or guess2==char5 or guess2==5:print('2nd letter ' +guess2+' is in the target but a different position.')
+    else:print('2nd letter ' +guess2+' is not in the ans.')
+    
+    #Check that the third character entered matches target 
+    if char3==guess3:print('3rd letter ' +guess3+' is correct.')
+    elif guess3==char1 or guess3==char2 or guess3==char4 or guess3==char5:print('3rd letter ' +guess3+' is in the target but a different position.')
+    else:print('3rd letter ' +guess3+' is not in the ans.')
+    
+    #Check that the fourth character entered matches target
+    if char4==guess4:print('4th letter ' +guess4+' is correct.')
+    elif guess4==char1 or guess4==char2 or guess4==char3 or guess4==char5:print('4th letter ' +guess4+' is in the target but a different position.')
+    else:print('4th letter ' +guess4+' is not in the ans.')
+    
+    #Check that the fifth character entered matches target
+    if guess5==char5:print('5th letter ' +guess5+' is correct.')
+    elif guess5==char1 or guess5==char2 or guess5==char3 or guess5==char4:print('5th letter ' +guess5+' is in the target but a different position.')
+    else:print('5th letter ' +guess5+' is not in the ans.')
+    
+    #Quit if correct
+    if char1==guess1 and char2==guess2 and char3==guess3 and char4==guess4 and char5==guess5:
+        print('You made it!')
+        exit()
+
+#Allow for guessing a total of 6 times
+for i in range(6):
+    guessing()
+    i=i+1
+print ('Please re-guess.')
