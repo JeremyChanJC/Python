@@ -93,7 +93,8 @@ print("3rd paragraph: " + Review3 + ", as number of positive and negative words 
 
 if count4pos > count4neg:
     Review4 = "positive review"
-else: Review4 = "negative review"
+elif count4pos < count4neg: Review4 = "negative review"
+else: Review4 = "Neither positive nor negative"
 print("4th paragraph: " + Review4 + ", as number of positive and negative words in the review are: " + str(count4pos) + ',' + str(count4neg))
 
 if count5pos > count5neg:
