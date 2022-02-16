@@ -1,5 +1,3 @@
-#import numpy as np
-
 f = open('D:\本機\下載\Reviews.txt', 'r')
 
 Reviews = f.read()
@@ -38,38 +36,92 @@ for number, paragraph in enumerate(splat, 1):
         array10 += [paragraph]
 
 f = open('D:\本機\下載\+vewords.txt')
-PosWords = f.read().split(' ')
+PosWords = f.read().split('\n')
 
 f = open('D:\本機\下載\-vewords.txt')
-NegWords = f.read().split(' ')
+NegWords = f.read().split('\n')
 
+para1 = [word for line in array1 for word in line.split()]
+para2 = [word for line in array2 for word in line.split()]
+para3 = [word for line in array3 for word in line.split()]
+para4 = [word for line in array4 for word in line.split()]
+para5 = [word for line in array5 for word in line.split()]
+para6 = [word for line in array6 for word in line.split()]
+para7 = [word for line in array7 for word in line.split()]
+para8 = [word for line in array8 for word in line.split()]
+para9 = [word for line in array9 for word in line.split()]
+para10 = [word for line in array10 for word in line.split()]
 
-count1pos = sum('PosWords' in f for f in 'arrayA')
-count2pos = sum(f in array2 for f in PosWords)
-count3pos = sum(f in array3 for f in PosWords)
-count4pos = sum(f in array4 for f in PosWords)
-count5pos = sum(f in array5 for f in PosWords)
-count6pos = sum(f in array6 for f in PosWords)
-count7pos = sum(f in array7 for f in PosWords)
-count8pos = sum(f in array8 for f in PosWords)
-count9pos = sum(f in array9 for f in PosWords)
-count10pos = sum(f in array10 for f in PosWords)
+#count1pos = sum('PosWords' in f for f in 'arrayA')
+count1pos = sum(f in para1 for f in PosWords)
+count2pos = sum(f in para2 for f in PosWords)
+count3pos = sum(f in para3 for f in PosWords)
+count4pos = sum(f in para4 for f in PosWords)
+count5pos = sum(f in para5 for f in PosWords)
+count6pos = sum(f in para6 for f in PosWords)
+count7pos = sum(f in para7 for f in PosWords)
+count8pos = sum(f in para8 for f in PosWords)
+count9pos = sum(f in para9 for f in PosWords)
+count10pos = sum(f in para10 for f in PosWords)
 
-count1neg = sum('NegWords' in f for f in 'arrayA')
-count2neg = sum(f in array2 for f in NegWords)
-count3neg = sum(f in array3 for f in NegWords)
-count4neg = sum(f in array4 for f in NegWords)
-count5neg = sum(f in array5 for f in NegWords)
-count6neg = sum(f in array6 for f in NegWords)
-count7neg = sum(f in array7 for f in NegWords)
-count8neg = sum(f in array8 for f in NegWords)
-count9neg = sum(f in array9 for f in NegWords)
-count10neg = sum(f in array10 for f in NegWords)
-
+#count1neg = sum('NegWords' in f for f in 'arrayA')
+count1neg = sum(f in para1 for f in NegWords)
+count2neg = sum(f in para2 for f in NegWords)
+count3neg = sum(f in para3 for f in NegWords)
+count4neg = sum(f in para4 for f in NegWords)
+count5neg = sum(f in para5 for f in NegWords)
+count6neg = sum(f in para6 for f in NegWords)
+count7neg = sum(f in para7 for f in NegWords)
+count8neg = sum(f in para8 for f in NegWords)
+count9neg = sum(f in para9 for f in NegWords)
+count10neg = sum(f in para10 for f in NegWords)
 
 if count1pos > count1neg:
-    Review1 = "Positive review"
+    Review1 = "positive review"
 else: Review1 = "Negative review"
+print("1st paragraph: " + Review1 + ", as number of positive and negative words in the review are: " + str(count1pos) + ',' + str(count1neg))
+
+if count2pos > count2neg:
+    Review2 = "positive review"
+else: Review2 = "negative review"
+print("2nd paragraph: " + Review2 + ", as number of positive and negative words in the review are: " + str(count2pos) + ',' + str(count2neg))
     
-print("Number of positive and negative words in 1st Review:" + str(count1pos) + ',' + str(count1neg))
-print("1st paragraph: " + Review1)
+if count3pos > count3neg:
+    Review3 = "positive review"
+else: Review3 = "negative review"
+print("3rd paragraph: " + Review3 + ", as number of positive and negative words in the review are: " + str(count3pos) + ',' + str(count3neg))
+
+if count4pos > count4neg:
+    Review4 = "positive review"
+else: Review4 = "negative review"
+print("4th paragraph: " + Review4 + ", as number of positive and negative words in the review are: " + str(count4pos) + ',' + str(count4neg))
+
+if count5pos > count5neg:
+    Review5 = "positive review"
+else: Review5 = "negative review"
+print("5th paragraph: " + Review5 + ", as number of positive and negative words in the review are: " + str(count5pos) + ',' + str(count5neg))
+
+if count6pos > count6neg:
+    Review6 = "positive review"
+else: Review6 = "negative review"
+print("6th paragraph: " + Review6 + ", as number of positive and negative words in the review are: " + str(count6pos) + ',' + str(count6neg))
+
+if count7pos > count7neg:
+    Review7 = "positive review"
+else: Review7 = "negative review"
+print("7th paragraph: " + Review7 + ", as number of positive and negative words in the review are: " + str(count7pos) + ',' + str(count7neg))
+
+if count8pos > count8neg:
+    Review8 = "positive review"
+else: Review8 = "negative review"
+print("8th paragraph: " + Review8 + ", as number of positive and negative words in the review are: " + str(count8pos) + ',' + str(count8neg))
+
+if count9pos > count9neg:
+    Review9 = "positive review"
+else: Review9 = "negative review"
+print("9th paragraph: " + Review9 + ", as number of positive and negative words in the review are: " + str(count9pos) + ',' + str(count9neg))
+
+if count10pos > count10neg:
+    Review10 = "positive review"
+else: Review10 = "negative review"
+print("10th paragraph: " + Review10 + ", as number of positive and negative words in the review are: " + str(count10pos) + ',' + str(count10neg))
